@@ -1,0 +1,3 @@
+require './dice'
+run App
+
