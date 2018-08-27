@@ -9,6 +9,8 @@ class App < Sinatra::Base
     eyes = roll(dice.to_i, face.to_i)
     @source = "#{dice}d#{face}"
     @sum = eyes.inject(&:+)
+    cache_control :no_store
+    last_modified Time.now
     slim :dice
   end
 
